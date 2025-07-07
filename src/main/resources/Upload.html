@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upload to MinIO</title>
+</head>
+<body>
+<h2>Upload Image to Free MinIO Server</h2>
+
+<form method="post" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required/>
+    <button type="submit">Upload</button>
+</form>
+
+<div th:if="${message}">
+    <p th:text="${message}"></p>
+    <img th:src="${url}" style="max-width: 400px;" />
+</div>
+</body>
+</html>
